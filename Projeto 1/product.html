@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Produto - Minha Loja</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Logo" class="logo">
+        <span class="brand-name">Minha Loja</span>
+      </div>
+
+      <nav class="menu">
+        <a href="index.html">Promoções</a>
+        <a href="catalog.html">Catálogo</a>
+      </nav>
+
+      <div class="icons">
+        <a id="profileLink" href="login.html" class="btn-icon" title="Perfil">👤</a>
+        <button id="cartBtn2" class="btn-icon" title="Carrinho">🛒 <span id="cartCount2" class="badge">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container section">
+    <div class="product-detail">
+      <div class="product-media">
+        <div class="big-image"></div>
+      </div>
+      <div class="product-info">
+        <h1>Nome do produto em promoção</h1>
+        <p class="price">R$ 99,90</p>
+        <p class="desc">Descrição curta do produto. Texto de exemplo para preencher o layout.</p>
+        <div class="actions">
+          <button id="buyNow" class="btn primary">Comprar</button>
+          <button id="addFav" class="btn">Favoritar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

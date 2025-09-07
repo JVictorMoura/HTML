@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carrinho - Minha Loja</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand"><img src="assets/logo.svg" alt="Logo" class="logo"> Minha Loja</div>
+      <div class="icons">
+        <a href="index.html" class="btn">Voltar às promoções</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2>Seu carrinho</h2>
+    <div id="cartPageItems" class="cart-page-items"></div>
+
+    <div class="checkout-panel">
+      <div class="checkout-left">
+        <h3>Dados do pedido</h3>
+        <label>Nome</label><input type="text">
+        <label>Endereço</label><input type="text">
+      </div>
+
+      <div class="checkout-right">
+        <h3>Escolha a forma de pagamento</h3>
+        <div class="payment-options">
+          <label><input type="radio" name="pay" value="card" checked> Cartão</label>
+          <label><input type="radio" name="pay" value="pix"> PIX</label>
+          <label><input type="radio" name="pay" value="boleto"> Boleto</label>
+        </div>
+
+        <div id="paymentCard" class="payment-method">
+          <label>Cartão (simulação)</label>
+          <input placeholder="Número do cartão">
+          <input placeholder="MM/AA">
+          <input placeholder="CVC">
+        </div>
+
+        <div id="paymentPix" class="payment-method hidden">
+          <p>Escaneie o QR Code abaixo com seu app bancário (mockup)</p>
+          <div class="qr-box">[QR CODE]</div>
+        </div>
+
+        <div id="paymentBoleto" class="payment-method hidden">
+          <p>Gerar boleto (simulado)</p>
+          <button class="btn">Gerar boleto</button>
+        </div>
+
+        <div class="checkout-total">
+          <span>Total</span>
+          <strong id="checkoutTotal">R$ 0,00</strong>
+        </div>
+
+        <button id="placeOrder" class="btn primary block">Confirmar pagamento</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
