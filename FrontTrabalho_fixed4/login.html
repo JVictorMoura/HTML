@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DrogaFast - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+       <img src="assets/logo/logo.png" alt="Logo" class="logo" style="width: 220px; height: auto;">
+   
+      </div>
+
+      <nav class="menu">
+        <a href="index.html">Promoções</a>
+        <a href="catalog.html">Medicamentos</a>
+        <a href="categories.html">Categorias</a>
+      </nav>
+
+      <div class="icons">
+        <a id="profileLink" href="login.html" class="btn-icon active" title="Perfil">👤</a>
+        <button id="cartBtn" class="btn-icon" title="Carrinho">🛒 <span id="cartCount" class="badge">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main style="background: var(--secondary-color); min-height: calc(100vh - 140px); display: flex; align-items: center; justify-content: center; padding: 40px 20px;">
+    <div style="background: white; border-radius: 12px; box-shadow: var(--shadow-hover); max-width: 400px; width: 100%; padding: 40px;">
+      
+      <!-- Tabs -->
+      <div style="display: flex; margin-bottom: 30px; border-bottom: 2px solid var(--border-color);">
+        <button id="loginTab" class="tab-btn active" style="flex: 1; padding: 12px; background: none; border: none; font-weight: 600; color: var(--text-light); cursor: pointer; border-bottom: 2px solid transparent;">
+          Entrar
+        </button>
+        <button id="registerTab" class="tab-btn" style="flex: 1; padding: 12px; background: none; border: none; font-weight: 600; color: var(--text-light); cursor: pointer; border-bottom: 2px solid transparent;">
+          Cadastrar
+        </button>
+      </div>
+
+      <!-- Login Form -->
+      <div id="loginForm" class="auth-form">
+        <h2 style="text-align: center; margin-bottom: 30px; color: var(--text-dark);">Bem-vindo de volta!</h2>
+        
+        <form id="loginFormElement">
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-dark);">E-mail</label>
+            <input type="email" id="loginEmail" required 
+                   style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 1rem;"
+                   placeholder="seu@email.com">
+          </div>
+          
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-dark);">Senha</label>
+            <div style="position: relative;">
+              <input type="password" id="loginPassword" required 
+                     style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 1rem; padding-right: 45px;"
+                     placeholder="Sua senha">
+              <button type="button" id="toggleLoginPassword" 
+                      style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 1.2rem;">
+                👁️
+              </button>
+            </div>
+          </div>
+          
+          <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <input type="checkbox" id="rememberMe" style="width: 16px; height: 16px;">
+              <span style="font-size: 0.9rem; color: var(--text-light);">Lembrar de mim</span>
+            </label>
+            <a href="#" style="color: var(--primary-color); text-decoration: none; font-size: 0.9rem;">Esqueci minha senha</a>
+          </div>
+          
+          <button type="submit" class="btn primary block" style="margin-bottom: 20px;">
+            Entrar
+          </button>
+        </form>
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+          <span style="color: var(--text-light); font-size: 0.9rem;">ou continue com</span>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <button class="social-btn" style="padding: 10px; border: 2px solid var(--border-color); background: white; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <span style="font-size: 1.2rem;">📱</span>
+            <span>Google</span>
+          </button>
+          <button class="social-btn" style="padding: 10px; border: 2px solid var(--border-color); background: white; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <span style="font-size: 1.2rem;">📘</span>
+            <span>Facebook</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Register Form -->
+      <div id="registerForm" class="auth-form" style="display: none;">
+        <h2 style="text-align: center; margin-bottom: 30px; color: var(--text-dark);">Crie sua conta</h2>
+        
+        <form id="registerFormElement">
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-dark);">Nome completo</label>
+            <input type="text" id="registerName" required 
+                   style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 1rem;"
+                   placeholder="Seu nome completo">
+          </div>
+          
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-dark);">E-mail</label>
+            <input type="email" id="registerEmail" required 
+                   style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 1rem;"
+                   placeholder="seu@email.com">
+          </div>
+          
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-dark);">CPF</label>
+            <input type="text" id="registerCPF" required 
+                   style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 1rem;"
+                   placeholder="000.000.000-00" maxlength="14">
+          </div>
+          
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-dark);">Senha</label>
+            <div style="position: relative;">
+              <input type="password" id="registerPassword" required 
+                     style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 1rem; padding-right: 45px;"
+                     placeholder="Mínimo 8 caracteres" minlength="8">
+              <button type="button" id="toggleRegisterPassword" 
+                      style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 1.2rem;">
+                👁️
+              </button>
+            </div>
+            <div id="passwordStrength" style="margin-top: 8px; font-size: 0.8rem;"></div>
+          </div>
+          
+          <div style="margin-bottom: 20px;">
+            <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer; font-size: 0.9rem; line-height: 1.4;">
+              <input type="checkbox" id="acceptTerms" required style="width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0;">
+              <span style="color: var(--text-light);">
+                Aceito os <a href="#" style="color: var(--primary-color); text-decoration: none;">termos de uso</a> 
+                e a <a href="#" style="color: var(--primary-color); text-decoration: none;">política de privacidade</a>
+              </span>
+            </label>
+          </div>
+          
+          <button type="submit" class="btn primary block">
+            Criar conta
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Carrinho Drawer -->
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Seu carrinho</h3>
+      <button id="closeCart" class="btn-icon">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-totals">
+        <span>Total</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <a href="cart.html" class="btn primary block">Finalizar compra</a>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 DrogaFast — Sua farmácia online de confiança</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+
+  <style>
+    .tab-btn.active {
+      color: var(--primary-color) !important;
+      border-bottom-color: var(--primary-color) !important;
+    }
+    
+    .social-btn:hover {
+      border-color: var(--primary-color);
+      background: var(--secondary-color);
+    }
+    
+    .btn-icon.active {
+      background: var(--primary-color);
+      color: var(--white);
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(0, 168, 107, 0.1);
+    }
+    
+    .password-strength {
+      height: 4px;
+      border-radius: 2px;
+      margin-top: 5px;
+      background: var(--border-color);
+      overflow: hidden;
+    }
+    
+    .strength-bar {
+      height: 100%;
+      transition: width 0.3s ease, background-color 0.3s ease;
+    }
+  </style>
+</body>
+</html>

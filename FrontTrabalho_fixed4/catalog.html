@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DrogaFast - Catálogo de Medicamentos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+       <img src="assets/logo/logo.png" alt="Logo" class="logo" style="width: 220px; height: auto;">
+        
+      </div>
+
+      <nav class="menu">
+        <a href="index.html">Promoções</a>
+        <a href="catalog.html" class="active">Catálogo</a>
+        <a href="categories.html">Categorias</a>
+      </nav>
+
+      <div class="icons">
+        <a id="profileLink" href="login.html" class="btn-icon" title="Perfil">👤</a>
+        <button id="cartBtn" class="btn-icon" title="Carrinho">🛒 <span id="cartCount" class="badge">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- Breadcrumb -->
+    <section class="container" style="padding: 20px; background: white; margin-bottom: 20px;">
+      <nav style="font-size: 0.9rem; color: var(--text-light);">
+        <a href="index.html" style="color: var(--primary-color); text-decoration: none;">Início</a> > 
+        <span>Catálogo de Medicamentos</span>
+      </nav>
+    </section>
+
+    <!-- Filtros e Busca -->
+    <section class="container section">
+      <h1 class="section-title">Catálogo Completo</h1>
+      
+      <!-- Barra de Busca -->
+      <div style="margin-bottom: 30px;">
+        <div style="display: flex; gap: 15px; max-width: 800px; margin: 0 auto;">
+          <input type="text" id="searchInput" placeholder="Buscar medicamentos, vitaminas, produtos..." 
+                 style="flex: 1; padding: 12px 20px; border: 2px solid var(--border-color); border-radius: 25px; font-size: 1rem;">
+          <button id="searchBtn" class="btn primary" style="padding: 12px 24px; border-radius: 25px;">
+            🔍 Buscar
+          </button>
+        </div>
+      </div>
+
+      <!-- Filtros Avançados -->
+      <div class="controls" style="background: var(--secondary-color); padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; width: 100%;">
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-weight: 500;">Categoria</label>
+            <select id="categoryFilter" style="width: 100%; padding: 8px 12px; border: 2px solid var(--border-color); border-radius: 6px;">
+              <option value="">Todas as categorias</option>
+              <option value="Medicamentos">Medicamentos</option>
+              <option value="Vitaminas">Vitaminas</option>
+              <option value="Higiene">Higiene</option>
+              <option value="Beleza">Beleza</option>
+              <option value="Infantil">Infantil</option>
+            </select>
+          </div>
+          
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-weight: 500;">Faixa de Preço</label>
+            <select id="priceFilter" style="width: 100%; padding: 8px 12px; border: 2px solid var(--border-color); border-radius: 6px;">
+              <option value="">Todos os preços</option>
+              <option value="0-20">R$ 0 - R$ 20</option>
+              <option value="20-50">R$ 20 - R$ 50</option>
+              <option value="50-100">R$ 50 - R$ 100</option>
+              <option value="100+">Acima de R$ 100</option>
+            </select>
+          </div>
+          
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-weight: 500;">Receita</label>
+            <select id="prescriptionFilter" style="width: 100%; padding: 8px 12px; border: 2px solid var(--border-color); border-radius: 6px;">
+              <option value="">Todos</option>
+              <option value="false">Sem receita</option>
+              <option value="true">Com receita</option>
+            </select>
+          </div>
+          
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-weight: 500;">Ordenar por</label>
+            <select id="sortSelect" style="width: 100%; padding: 8px 12px; border: 2px solid var(--border-color); border-radius: 6px;">
+              <option value="name">Nome A-Z</option>
+              <option value="price-asc">Preço: Menor</option>
+              <option value="price-desc">Preço: Maior</option>
+              <option value="rating">Mais Avaliados</option>
+            </select>
+          </div>
+        </div>
+        
+        <button id="clearFilters" style="margin-top: 15px; padding: 8px 16px; background: var(--text-light); color: white; border: none; border-radius: 6px; cursor: pointer;">
+          Limpar Filtros
+        </button>
+      </div>
+
+      <!-- Resultados -->
+      <div id="resultsInfo" style="margin-bottom: 20px; font-weight: 500; color: var(--text-dark);"></div>
+      
+      <div id="grid" class="grid">
+        <!-- Produtos via JS -->
+      </div>
+      
+      <!-- Loading -->
+      <div id="loading" style="display: none; text-align: center; padding: 40px;">
+        <div style="display: inline-block; width: 40px; height: 40px; border: 3px solid var(--border-color); border-top: 3px solid var(--primary-color); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        <p style="margin-top: 15px; color: var(--text-light);">Carregando produtos...</p>
+      </div>
+    </section>
+
+    <!-- Modal Produto -->
+    <div id="productModal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">✕</button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <!-- Carrinho Drawer -->
+    <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+      <div class="cart-header">
+        <h3>Seu carrinho</h3>
+        <button id="closeCart" class="btn-icon">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-totals">
+          <span>Total</span>
+          <strong id="cartTotal">R$ 0,00</strong>
+        </div>
+        <a href="cart.html" class="btn primary block">Finalizar compra</a>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 DrogaFast — Sua farmácia online de confiança</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/catalog.js"></script>
+  
+  <style>
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</body>
+</html>

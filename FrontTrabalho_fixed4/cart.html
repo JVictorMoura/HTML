@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DrogaFast - Carrinho de Compras</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+    <img src="assets/logo/logo.png" alt="Logo" class="logo" style="width: 220px; height: auto;">
+       
+      </div>
+
+      <nav class="menu">
+        <a href="index.html">Promoções</a>
+        <a href="catalog.html">Medicamentos</a>
+        <a href="categories.html">Categorias</a>
+      </nav>
+
+      <div class="icons">
+        <a id="profileLink" href="login.html" class="btn-icon" title="Perfil">👤</a>
+        <button id="cartBtn" class="btn-icon active" title="Carrinho">🛒 <span id="cartCount" class="badge">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main style="background: var(--secondary-color); min-height: calc(100vh - 140px); padding: 40px 0;">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav style="margin-bottom: 30px; font-size: 0.9rem; color: var(--text-light);">
+        <a href="index.html" style="color: var(--primary-color); text-decoration: none;">Início</a> > 
+        <span>Carrinho de Compras</span>
+      </nav>
+
+      <div style="display: grid; grid-template-columns: 1fr 350px; gap: 30px; align-items: start;">
+        
+        <!-- Lista de Produtos -->
+        <div>
+          <div style="background: white; border-radius: 12px; box-shadow: var(--shadow); overflow: hidden;">
+            <div style="padding: 30px 30px 0; border-bottom: 1px solid var(--border-color);">
+              <h1 style="margin: 0; color: var(--text-dark);">Seu Carrinho</h1>
+              <p id="cartItemCount" style="margin: 10px 0 30px; color: var(--text-light);">0 itens</p>
+            </div>
+            
+            <div id="cartItemsList" style="padding: 0;">
+              <!-- Itens do carrinho serão inseridos aqui -->
+            </div>
+            
+            <!-- Cupom de Desconto -->
+            <div style="padding: 30px; background: var(--secondary-color); border-top: 1px solid var(--border-color);">
+              <h3 style="margin-bottom: 15px; color: var(--text-dark);">Cupom de Desconto</h3>
+              <div style="display: flex; gap: 12px;">
+                <input type="text" id="couponInput" placeholder="Digite seu cupom" 
+                       style="flex: 1; padding: 12px 16px; border: 2px solid var(--border-color); border-radius: 8px;">
+                <button id="applyCoupon" class="btn secondary">Aplicar</button>
+              </div>
+              <div id="couponMessage" style="margin-top: 10px; font-size: 0.9rem;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resumo do Pedido -->
+        <div style="position: sticky; top: 90px;">
+          <div style="background: white; border-radius: 12px; box-shadow: var(--shadow); padding: 30px;">
+            <h3 style="margin-bottom: 25px; color: var(--text-dark);">Resumo do Pedido</h3>
+            
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+              <span>Subtotal:</span>
+              <span id="subtotal">R$ 0,00</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+              <span>Frete:</span>
+              <span id="shipping" style="color: var(--success-color); font-weight: 600;">GRÁTIS</span>
+            </div>
+            
+            <div id="discountRow" style="display: none; justify-content: space-between; margin-bottom: 15px;">
+              <span style="color: var(--success-color);">Desconto:</span>
+              <span id="discount" style="color: var(--success-color); font-weight: 600;">- R$ 0,00</span>
+            </div>
+            
+            <hr style="margin: 20px 0; border: none; height: 1px; background: var(--border-color);">
+            
+            <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700; margin-bottom: 25px;">
+              <span>Total:</span>
+              <span id="total" style="color: var(--primary-color);">R$ 0,00</span>
+            </div>
+            
+            <!-- Forma de Entrega -->
+            <div style="margin-bottom: 25px;">
+              <h4 style="margin-bottom: 15px;">Forma de Entrega</h4>
+              <label style="display: flex; align-items: center; gap: 10px; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; cursor: pointer; margin-bottom: 10px;">
+                <input type="radio" name="delivery" value="express" checked style="width: 16px; height: 16px;">
+                <div style="flex: 1;">
+                  <div style="font-weight: 600;">Entrega Express</div>
+                  <div style="font-size: 0.8rem; color: var(--text-light);">Receba em até 2 horas - GRÁTIS</div>
+                </div>
+              </label>
+              <label style="display: flex; align-items: center; gap: 10px; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; cursor: pointer;">
+                <input type="radio" name="delivery" value="normal" style="width: 16px; height: 16px;">
+                <div style="flex: 1;">
+                  <div style="font-weight: 600;">Entrega Normal</div>
+                  <div style="font-size: 0.8rem; color: var(--text-light);">Receba em 1-2 dias úteis - GRÁTIS</div>
+                </div>
+              </label>
+            </div>
+            
+            <button id="checkoutBtn" class="btn primary block" style="font-size: 1.1rem; font-weight: 700; padding: 16px;">
+              Finalizar Pedido
+            </button>
+            
+            <div style="text-align: center; margin-top: 20px;">
+              <a href="catalog.html" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">
+                ← Continuar Comprando
+              </a>
+            </div>
+          </div>
+          
+          <!-- Informações de Segurança -->
+          <div style="background: white; border-radius: 12px; box-shadow: var(--shadow); padding: 25px; margin-top: 20px;">
+            <h4 style="margin-bottom: 15px; color: var(--text-dark);">Compra Segura</h4>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <span style="font-size: 1.2rem;">🔒</span>
+              <span style="font-size: 0.9rem;">Dados protegidos com SSL</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <span style="font-size: 1.2rem;">💊</span>
+              <span style="font-size: 0.9rem;">Medicamentos originais</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-size: 1.2rem;">📞</span>
+              <span style="font-size: 0.9rem;">Suporte 24/7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de Checkout -->
+  <div id="checkoutModal" class="modal">
+    <div class="modal-content" style="max-width: 500px;">
+      <button class="modal-close" id="closeCheckoutModal">✕</button>
+      <div style="padding: 30px; text-align: center;">
+        <div style="width: 60px; height: 60px; background: var(--success-color); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+          ✓
+        </div>
+        <h2 style="margin-bottom: 15px; color: var(--text-dark);">Pedido Realizado!</h2>
+        <p style="color: var(--text-light); margin-bottom: 25px;">
+          Seu pedido foi confirmado e será processado em breve. 
+          Você receberá um e-mail com os detalhes.
+        </p>
+        <div style="background: var(--secondary-color); padding: 20px; border-radius: 8px; margin-bottom: 25px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span>Número do Pedido:</span>
+            <strong id="orderNumber">-</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>Previsão de Entrega:</span>
+            <strong id="deliveryEstimate">-</strong>
+          </div>
+        </div>
+        <button onclick="window.location.href='index.html'" class="btn primary block">
+          Continuar Comprando
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 DrogaFast — Sua farmácia online de confiança</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+
+  <style>
+    @media (max-width: 768px) {
+      main > .container > div {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .container > div > div:last-child {
+        position: static !important;
+      }
+    }
+    
+    .cart-item-row {
+      padding: 20px 30px;
+      border-bottom: 1px solid var(--border-color);
+      display: grid;
+      grid-template-columns: 80px 1fr auto auto;
+      gap: 20px;
+      align-items: center;
+    }
+    
+    .cart-item-row:last-child {
+      border-bottom: none;
+    }
+    
+    .cart-item-row:hover {
+      background: var(--secondary-color);
+    }
+    
+    .delivery-option:has(input:checked) {
+      border-color: var(--primary-color) !important;
+      background: rgba(0, 168, 107, 0.05);
+    }
+  </style>
+</body>
+</html>
