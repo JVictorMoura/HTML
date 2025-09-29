@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DrogaFast - Categorias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="assets/logo/logo.png" alt="Logo" class="logo" style="width: 220px; height: auto;">
+        <span class="brand-name"></span>
+      </div>
+
+      <nav class="menu">
+        <a href="index.html">Promoções</a>
+        <a href="catalog.html">Medicamentos</a>
+        <a href="categories.html" class="active">Categorias</a>
+      </nav>
+
+      <div class="icons">
+        <a id="profileLink" href="login.html" class="btn-icon" title="Perfil">👤</a>
+        <button id="cartBtn" class="btn-icon" title="Carrinho">🛒 <span id="cartCount" class="badge">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- Hero -->
+    <section style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 80px 0; text-align: center;">
+      <div class="container">
+        <h1 style="font-size: 3rem; font-weight: 900; margin-bottom: 20px;">Todas as Categorias</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Encontre exatamente o que você precisa para sua saúde e bem-estar</p>
+      </div>
+    </section>
+
+    <!-- Categorias -->
+    <section class="container section">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        
+        <!-- Medicamentos -->
+        <div class="category-card" onclick="window.location.href='catalog.html?category=Medicamentos'">
+          <div class="category-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">💊</div>
+          <h3>Medicamentos</h3>
+          <p>Analgésicos, antibióticos, anti-inflamatórios e todos os medicamentos que você precisa</p>
+          <div class="category-stats">
+            <span>150+ produtos</span>
+            <span>•</span>
+            <span>Receita opcional</span>
+          </div>
+          <button class="category-btn">Ver Medicamentos →</button>
+        </div>
+
+        <!-- Vitaminas -->
+        <div class="category-card" onclick="window.location.href='catalog.html?category=Vitaminas'">
+          <div class="category-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">🍊</div>
+          <h3>Vitaminas e Suplementos</h3>
+          <p>Vitaminas, minerais e suplementos para fortalecer sua imunidade e saúde</p>
+          <div class="category-stats">
+            <span>80+ produtos</span>
+            <span>•</span>
+            <span>Sem receita</span>
+          </div>
+          <button class="category-btn">Ver Vitaminas →</button>
+        </div>
+
+        <!-- Higiene -->
+        <div class="category-card" onclick="window.location.href='catalog.html?category=Higiene'">
+          <div class="category-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">🧼</div>
+          <h3>Higiene e Cuidados</h3>
+          <p>Produtos de higiene pessoal, bucal e cuidados diários essenciais</p>
+          <div class="category-stats">
+            <span>120+ produtos</span>
+            <span>•</span>
+            <span>Uso diário</span>
+          </div>
+          <button class="category-btn">Ver Higiene →</button>
+        </div>
+
+        <!-- Beleza -->
+        <div class="category-card" onclick="window.location.href='catalog.html?category=Beleza'">
+          <div class="category-icon" style="background: linear-gradient(135deg, #e91e63, #c2185b);">💄</div>
+          <h3>Beleza e Cosméticos</h3>
+          <p>Cosméticos, produtos para pele, cabelo e cuidados com a beleza</p>
+          <div class="category-stats">
+            <span>200+ produtos</span>
+            <span>•</span>
+            <span>Dermatológico</span>
+          </div>
+          <button class="category-btn">Ver Beleza →</button>
+        </div>
+
+        <!-- Infantil -->
+        <div class="category-card" onclick="window.location.href='catalog.html?category=Infantil'">
+          <div class="category-icon" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2);">🍼</div>
+          <h3>Infantil</h3>
+          <p>Produtos especiais para bebês e crianças, com segurança garantida</p>
+          <div class="category-stats">
+            <span>60+ produtos</span>
+            <span>•</span>
+            <span>Pediatria</span>
+          </div>
+          <button class="category-btn">Ver Infantil →</button>
+        </div>
+
+        <!-- Especiais -->
+        <div class="category-card" onclick="window.location.href='catalog.html?category=Especiais'">
+          <div class="category-icon" style="background: linear-gradient(135deg, #00bcd4, #0097a7);">⭐</div>
+          <h3>Produtos Especiais</h3>
+          <p>Produtos importados, fitoterapia e itens especiais para necessidades específicas</p>
+          <div class="category-stats">
+            <span>40+ produtos</span>
+            <span>•</span>
+            <span>Exclusivos</span>
+          </div>
+          <button class="category-btn">Ver Especiais →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Informações -->
+    <section style="background: var(--secondary-color); padding: 60px 0;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 50px;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--text-dark); margin-bottom: 20px;">Por que escolher a FarmaMarket?</h2>
+          <p style="font-size: 1.1rem; color: var(--text-light); max-width: 600px; margin: 0 auto;">Somos uma farmácia online comprometida com sua saúde e bem-estar</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+          <div style="text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: var(--shadow);">
+            <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.8rem;">🛡️</div>
+            <h4 style="margin-bottom: 15px; color: var(--text-dark);">Produtos Originais</h4>
+            <p style="color: var(--text-light); line-height: 1.6;">Todos os nossos medicamentos são originais e aprovados pela ANVISA</p>
+          </div>
+
+          <div style="text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: var(--shadow);">
+            <div style="width: 60px; height: 60px; background: var(--success-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.8rem;">🚚</div>
+            <h4 style="margin-bottom: 15px; color: var(--text-dark);">Entrega Rápida</h4>
+            <p style="color: var(--text-light); line-height: 1.6;">Entrega express em até 2 horas ou normal em 1-2 dias úteis</p>
+          </div>
+
+          <div style="text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: var(--shadow);">
+            <div style="width: 60px; height: 60px; background: var(--warning-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.8rem;">👩‍⚕️</div>
+            <h4 style="margin-bottom: 15px; color: var(--text-dark);">Suporte Farmacêutico</h4>
+            <p style="color: var(--text-light); line-height: 1.6;">Farmacêuticos qualificados disponíveis para tirar suas dúvidas</p>
+          </div>
+
+          <div style="text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: var(--shadow);">
+            <div style="width: 60px; height: 60px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.8rem;">💰</div>
+            <h4 style="margin-bottom: 15px; color: var(--text-dark);">Melhores Preços</h4>
+            <p style="color: var(--text-light); line-height: 1.6;">Preços competitivos e promoções exclusivas para você economizar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrinho Drawer -->
+    <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+      <div class="cart-header">
+        <h3>Seu carrinho</h3>
+        <button id="closeCart" class="btn-icon">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-totals">
+          <span>Total</span>
+          <strong id="cartTotal">R$ 0,00</strong>
+        </div>
+        <a href="cart.html" class="btn primary block">Finalizar compra</a>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 DrogaFast — Sua farmácia online de confiança</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <style>
+    .category-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary-color);
+    }
+    
+    .category-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 20px;
+    }
+    
+    .category-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--text-dark);
+    }
+    
+    .category-card p {
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .category-stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    
+    .category-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .category-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+  </style>
+</body>
+</html>
