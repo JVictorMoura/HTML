@@ -1,0 +1,43 @@
+.video1{
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.search-bar{
+    display: block;
+    border-radius: 10px;
+    border-width: 1px;
+/* font-size: 20px;
+margin-left: 12px; */
+
+
+}
+.video-title{
+    /* margin : 0; */
+    
+}
+
+.video-author{
+    /* text-align: center; */
+
+}
+
+
+.video-stats{
+display: block;
+}
+
+.video-preview{
+vertical-align: top;
+ width: 300px;    
+ display: inline-block;
+ margin-right:15px;
+ /* background-color: red;
+ border-radius: 500px;
+*/
+/* border-width: 1px;
+border-color: black;
+border-style: solid; */
+}
