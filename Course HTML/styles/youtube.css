@@ -1,8 +1,4 @@
-p{
-    font-family: Roboto;
-    margin-top: 0;
-    margin-bottom: 0;
-}
+
 
 
 
@@ -14,15 +10,7 @@ p{
     display: block; */
 }
 
-.search-bar{
-    display: block;
-    border-radius: 10px;
-    border-width: 1px;
-/* font-size: 20px;
-margin-left: 12px; */
 
-
-}
 .video-title{
     /* margin : 0; */
     margin-top: 0;
