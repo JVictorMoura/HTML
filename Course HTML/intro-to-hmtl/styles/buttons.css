@@ -1,0 +1,95 @@
+.subscribe {
+  background-color: rgb(192, 0, 0);
+  color: white;
+  border: none;
+  /* height: 36px;
+    width: 100px; */
+  border-radius: 2px;
+  cursor: pointer;
+  /* altera o mouse para "clicavel" quando passa por cima */
+  margin-right: 8px;
+  /* adicionando margem */
+  padding: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  vertical-align: top;
+
+}
+
+.subscribe:hover {
+  opacity: 10%;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.subscribe:active {
+  opacity: 50%;
+
+}
+
+
+
+button.join {
+  background-color: rgb(255, 255, 255);
+  color: rgb(28, 123, 239);
+  border-color: rgb(28, 123, 239);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  height: 36px;
+  width: 62px;
+  cursor: pointer;
+  /* altera o mouse para "clicavel" quando passa por cima */
+  transition: background-color 0.2s,
+    /*comma for multiples atributes*/
+    color 1s;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+
+}
+
+.join:hover {
+  background-color: rgb(28, 123, 239);
+  color: rgb(255, 255, 255);
+
+
+
+}
+
+.join:active {
+  opacity: 70%;
+
+}
+
+
+
+
+
+button.tweet {
+  background-color: rgb(27, 166, 225);
+  color: rgb(255, 255, 255);
+  border-color: rgb(28, 123, 239);
+  border-radius: 30px;
+  border: none;
+  height: 36px;
+  width: 70px;
+  cursor: pointer;
+  /* altera o mouse para "clicavel" quando passa por cima */
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 10;
+  transition: box-shadow 0.2s;
+  vertical-align: top;
+}
+
+.tweet:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+}
+
+.tweet:active {
+  opacity: 70%;
+}
